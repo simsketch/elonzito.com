@@ -1,69 +1,114 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import * as THREE from 'three'
+import { useEffect, useState } from 'react'
 
 export default function Hero() {
-  const containerRef = useRef<HTMLDivElement>(null)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    if (!containerRef.current) return
-
-    const scene = new THREE.Scene()
-    const camera = new THREE.PerspectiveCamera(75, containerRef.current.clientWidth / containerRef.current.clientHeight, 0.1, 1000)
-    const renderer = new THREE.WebGLRenderer({ alpha: true })
-
-    renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight)
-    containerRef.current.appendChild(renderer.domElement)
-
-    const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16)
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true })
-    const torusKnot = new THREE.Mesh(geometry, material)
-
-    scene.add(torusKnot)
-    camera.position.z = 30
-
-    const animate = () => {
-      requestAnimationFrame(animate)
-      torusKnot.rotation.x += 0.01
-      torusKnot.rotation.y += 0.01
-      renderer.render(scene, camera)
-    }
-
-    animate()
-
-    const handleResize = () => {
-      if (!containerRef.current) return
-      camera.aspect = containerRef.current.clientWidth / containerRef.current.clientHeight
-      camera.updateProjectionMatrix()
-      renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight)
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-      if (containerRef.current) {
-        containerRef.current.removeChild(renderer.domElement)
-      }
-    }
+    setMounted(true)
   }, [])
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden z-10">
-      <div ref={containerRef} className="absolute inset-0 z-0" />
-      <div className="relative z-10 text-center bg-gray-900/50 backdrop-blur-md p-8 rounded-lg">
-        <h1 className="text-5xl font-bold mb-4 animate-fade-in-down">Elon Zito</h1>
-        <p className="text-xl mb-8 animate-fade-in-up">Principal Software Engineer</p>
-        <a 
-          href="#contact" 
-          className="relative inline-block bg-blue-500 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-600 transition duration-300 wave-button"
+    <section className="min-h-screen flex flex-col justify-center relative overflow-hidden pt-20">
+      {/* Decorative elements */}
+      <div className="absolute top-20 right-[10%] w-64 h-64 border-2 border-[var(--color-ink)] rounded-full opacity-5 animate-spin-slow" />
+      <div className="absolute bottom-40 left-[5%] w-32 h-32 border-2 border-[var(--color-ink)] opacity-5" style={{ transform: 'rotate(45deg)' }} />
+      <div className="absolute top-1/3 right-[20%] w-4 h-4 bg-[var(--color-rust)] rounded-full opacity-40" />
+
+      <div className="container-editorial">
+        {/* Pre-title */}
+        <div
+          className={`flex items-center gap-4 mb-8 ${
+            mounted ? 'animate-reveal-up opacity-100' : 'opacity-0'
+          }`}
         >
-          Get in Touch
-          <span className="absolute inset-0 rounded-full border-2 border-blue-400"></span>
-        </a>
+          <span className="font-mono text-xs uppercase tracking-[0.3em] opacity-60">
+            Principal Software Engineer
+          </span>
+          <span className="w-16 h-px bg-[var(--color-ink)] opacity-30" />
+        </div>
+
+        {/* Main title */}
+        <div className="relative">
+          <h1
+            className={`heading-massive ${
+              mounted ? 'animate-reveal-up delay-100 opacity-100' : 'opacity-0'
+            }`}
+          >
+            Elon
+          </h1>
+          <h1
+            className={`heading-massive flex items-baseline gap-4 ${
+              mounted ? 'animate-reveal-up delay-200 opacity-100' : 'opacity-0'
+            }`}
+          >
+            <span className="italic-accent text-[0.7em]">Zito</span>
+            <span className="text-[var(--color-rust)]">*</span>
+          </h1>
+        </div>
+
+        {/* Subtitle */}
+        <div
+          className={`mt-12 max-w-xl ${
+            mounted ? 'animate-reveal-up delay-300 opacity-100' : 'opacity-0'
+          }`}
+        >
+          <p className="font-serif text-xl md:text-2xl leading-relaxed">
+            Building intelligent systems at the intersection of{' '}
+            <span className="italic">generative AI</span> and{' '}
+            <span className="italic">elegant engineering</span>.
+          </p>
+        </div>
+
+        {/* CTA Row */}
+        <div
+          className={`mt-16 flex flex-wrap items-center gap-8 ${
+            mounted ? 'animate-reveal-up delay-400 opacity-100' : 'opacity-0'
+          }`}
+        >
+          <a
+            href="#contact"
+            className="group inline-flex items-center gap-4 px-8 py-4 bg-[var(--color-ink)] text-[var(--color-bone)] font-mono text-sm uppercase tracking-widest hover:bg-[var(--color-rust)] transition-colors duration-300"
+          >
+            Get in Touch
+            <svg
+              className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+
+          <a
+            href="#experience"
+            className="font-mono text-sm uppercase tracking-widest link-underline"
+          >
+            View Experience
+          </a>
+        </div>
+
+        {/* Scroll indicator */}
+        <div
+          className={`absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 ${
+            mounted ? 'animate-fade-in delay-600 opacity-100' : 'opacity-0'
+          }`}
+        >
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] opacity-40 vertical-text">
+            Scroll
+          </span>
+          <div className="w-px h-12 bg-[var(--color-ink)] opacity-20 animate-scroll-bounce" />
+        </div>
+      </div>
+
+      {/* Side decoration */}
+      <div className="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2">
+        <div className="vertical-text font-mono text-[10px] uppercase tracking-[0.3em] opacity-30">
+          Syracuse, NY — 2024
+        </div>
       </div>
     </section>
   )
 }
-

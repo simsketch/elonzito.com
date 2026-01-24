@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -9,35 +8,14 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import FloatingParticles from './components/FloatingParticles'
+import Marquee from './components/Marquee'
 
 export default function Home() {
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show')
-        } else {
-          entry.target.classList.remove('show')
-        }
-      })
-    }, {
-      threshold: 0.1
-    })
-
-    const hiddenElements = document.querySelectorAll('.hidden')
-    hiddenElements.forEach((el) => observer.observe(el))
-
-    return () => {
-      hiddenElements.forEach((el) => observer.unobserve(el))
-    }
-  }, [])
-
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 to-blue-900 text-white relative z-0">
-      <FloatingParticles className="fixed inset-0 z-0" />
+    <main className="min-h-screen grid-pattern">
       <Header />
       <Hero />
+      <Marquee />
       <About />
       <Experience />
       <Skills />
@@ -47,4 +25,3 @@ export default function Home() {
     </main>
   )
 }
-
