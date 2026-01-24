@@ -2,14 +2,14 @@
 
 export default function Marquee() {
   const items = [
-    'Generative AI',
+    'Agentic AI & LLMs',
     'Full-Stack Development',
     'React & Next.js',
-    'Python & Node.js',
-    'Cloud Architecture',
+    'Python & FastAPI',
+    'AWS & Terraform',
     'Team Leadership',
-    'Product Engineering',
-    'Developer Experience',
+    'RAG Systems',
+    'DevOps & CI/CD',
   ]
 
   return (

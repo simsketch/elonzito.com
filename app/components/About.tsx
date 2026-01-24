@@ -52,10 +52,9 @@ export default function About() {
               }`}
             >
               <p className="font-serif text-2xl md:text-3xl lg:text-4xl leading-snug mb-8">
-                Principal Software Engineer certified in{' '}
-                <span className="italic text-[var(--color-rust)]">Generative AI</span>,
-                specializing in leveraging LLMs, GenAI, and NLP to create automated
-                solutions that enhance productivity.
+                Generative AI certified principal engineer, specializing in leveraging{' '}
+                <span className="italic text-[var(--color-rust)]">LLMs, GenAI, Agentic Frameworks</span>{' '}
+                and NLP to create automated solutions that enhance productivity and reduce errors.
               </p>
             </div>
 
@@ -65,25 +64,74 @@ export default function About() {
               }`}
             >
               <p className="font-mono text-sm leading-relaxed opacity-70 max-w-2xl">
-                Experienced in architecting end-to-end technology solutions across
-                full-stack development, team leadership, QA automation, and Agile
-                methodologies. Technical expertise spans e-commerce platforms, mobile
-                development (React Native, Ionic), UX/UI design, and developer mentorship
-                with a focus on creating solutions that drive technological advancement.
+                Architect of end-to-end technology solutions across full-stack development,
+                leadership, QA automation, and Agile methodologies. Expertise spans e-commerce
+                platforms, mobile development, UX/UI design, and developer mentorship with a
+                focus on creating solutions that drive technological advancement.
               </p>
+            </div>
+
+            {/* Education */}
+            <div
+              className={`mt-12 pt-8 border-t border-[var(--color-ink)]/10 ${
+                isVisible ? 'animate-reveal-up delay-350 opacity-100' : 'opacity-0'
+              }`}
+            >
+              <h3 className="font-mono text-xs uppercase tracking-[0.3em] opacity-50 mb-4">
+                Education & Certifications
+              </h3>
+              <div className="space-y-4">
+                <div>
+                  <div className="font-display text-lg">Generative AI with Large Language Models</div>
+                  <div className="font-mono text-xs opacity-50">Coursera — May 2024</div>
+                </div>
+                <div>
+                  <div className="font-display text-lg">AA Graphic Design</div>
+                  <div className="font-mono text-xs opacity-50">Palm Beach State College — GPA 3.65</div>
+                </div>
+                <div>
+                  <div className="font-display text-lg">College Credit Certificate in Information Technology</div>
+                  <div className="font-mono text-xs opacity-50">Palm Beach State College</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Languages */}
+            <div
+              className={`mt-8 ${
+                isVisible ? 'animate-reveal-up delay-400 opacity-100' : 'opacity-0'
+              }`}
+            >
+              <h3 className="font-mono text-xs uppercase tracking-[0.3em] opacity-50 mb-4">
+                Languages
+              </h3>
+              <div className="flex flex-wrap gap-6">
+                <div>
+                  <span className="font-display text-lg">English</span>
+                  <span className="font-mono text-xs opacity-50 ml-2">Native</span>
+                </div>
+                <div>
+                  <span className="font-display text-lg">Spanish</span>
+                  <span className="font-mono text-xs opacity-50 ml-2">Very Good</span>
+                </div>
+                <div>
+                  <span className="font-display text-lg">Portuguese</span>
+                  <span className="font-mono text-xs opacity-50 ml-2">Working Knowledge</span>
+                </div>
+              </div>
             </div>
 
             {/* Stats */}
             <div
               className={`grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t-2 border-[var(--color-ink)]/10 ${
-                isVisible ? 'animate-reveal-up delay-400 opacity-100' : 'opacity-0'
+                isVisible ? 'animate-reveal-up delay-500 opacity-100' : 'opacity-0'
               }`}
             >
               {[
-                { value: '10+', label: 'Years Experience' },
-                { value: '50+', label: 'Projects Delivered' },
-                { value: '5', label: 'Companies' },
-                { value: '∞', label: 'Lines of Code' },
+                { value: '14+', label: 'Years Experience' },
+                { value: '13', label: 'Companies' },
+                { value: '3', label: 'Startups Founded' },
+                { value: '5', label: 'Team Lead Roles' },
               ].map((stat, index) => (
                 <div key={index}>
                   <div className="font-display text-4xl md:text-5xl text-[var(--color-rust)]">

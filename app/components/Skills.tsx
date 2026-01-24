@@ -7,12 +7,15 @@ const skillCategories = [
     category: "Expert",
     color: "var(--color-rust)",
     skills: [
-      "JavaScript", "TypeScript", "Node.js", "React", "Vue", "Svelte", "Next.js",
-      "MongoDB", "React Native", "Expo", "iOS",
+      "JavaScript", "TypeScript", "Node.js", "React", "Vue", "Svelte", "Next.js", "MongoDB",
+      "React Native", "Expo", "iOS",
       ".NET", "C#", "MSSQL", ".NET Core",
       "PHP", "MySQL", "Laravel",
       "AWS", "Serverless", "Docker", "Kubernetes", "Terraform",
-      "DevOps", "Heroku", "Digital Ocean", "Vercel", "Linux", "Supabase"
+      "CRM", "Salesforce", "Zoho", "FreshSales",
+      "Adobe Creative Suite",
+      "WordPress", "WooCommerce",
+      "DevOps", "Heroku", "Digital Ocean", "Vercel", "Linux", "Supabase", "VPC"
     ]
   },
   {
@@ -20,16 +23,20 @@ const skillCategories = [
     color: "var(--color-sage)",
     skills: [
       "Python", "Generative AI", "LLMs", "RAG", "Vector DBs",
-      "AngularJS", "Angular", "GraphQL", "Ionic Framework",
-      "Django", "Flask", "FastAPI", "Elixir", "PyTorch"
+      "AngularJS", "Angular", "GraphQL", "Ionic Framework"
     ]
   },
   {
-    category: "Proficient",
+    category: "Skillful",
     color: "var(--color-slate)",
     skills: [
-      "CRM Systems", "Salesforce", "Zoho", "FreshSales",
-      "Adobe Creative Suite", "WordPress", "WooCommerce",
+      "Python", "Django", "Flask", "FastAPI", "Elixir", "PyTorch"
+    ]
+  },
+  {
+    category: "Beginner",
+    color: "var(--color-charcoal)",
+    skills: [
       "Kotlin", "Flutter", "Dart", "Android"
     ]
   }
@@ -138,10 +145,10 @@ export default function Skills() {
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { name: 'GenAI / LLMs', desc: 'Building intelligent systems' },
-              { name: 'Next.js 15', desc: 'React Server Components' },
-              { name: 'Python', desc: 'ML & Data Processing' },
-              { name: 'Cloud Native', desc: 'K8s & Serverless' },
+              { name: 'Agentic AI', desc: 'LangChain, CrewAI, Mastra.js' },
+              { name: 'RAG Systems', desc: 'AWS Bedrock, Vector DBs' },
+              { name: 'DevOps', desc: 'Terraform, ECS, CI/CD' },
+              { name: 'Full Stack', desc: 'Next.js, FastAPI, Node.js' },
             ].map((tech, index) => (
               <div key={tech.name} className="group">
                 <div className="font-display text-2xl md:text-3xl group-hover:text-[var(--color-rust)] transition-colors">

@@ -24,7 +24,7 @@ export default function Hero() {
           }`}
         >
           <span className="font-mono text-xs uppercase tracking-[0.3em] opacity-60">
-            Principal Software Engineer
+            Senior Product Engineer (R+D)
           </span>
           <span className="w-16 h-px bg-[var(--color-ink)] opacity-30" />
         </div>
@@ -55,9 +55,10 @@ export default function Hero() {
           }`}
         >
           <p className="font-serif text-xl md:text-2xl leading-relaxed">
-            Building intelligent systems at the intersection of{' '}
-            <span className="italic">generative AI</span> and{' '}
-            <span className="italic">elegant engineering</span>.
+            Architecting intelligent systems with{' '}
+            <span className="italic">agentic AI</span>,{' '}
+            <span className="italic">LLMs</span>, and{' '}
+            <span className="italic">full-stack engineering</span>.
           </p>
         </div>
 
