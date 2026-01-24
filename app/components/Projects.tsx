@@ -13,14 +13,14 @@ const projects = [
   {
     title: "Greenlight Dining",
     description: "On-demand dining mobile app and web portal enabling real-time restaurant discovery and reservations. Full-stack application with real-time updates.",
-    link: "https://github.com/simsketch/greenlight",
+    link: "https://apkpure.com/greenlight-dining/com.a2zCreative.greenlight",
     tags: ["React Native", "ReactJS", "Node", "MongoDB"],
     number: "02"
   },
   {
     title: "Cutetitos Match Game",
     description: "Mobile game that reached the Top 100 in the App Store Family Category. Engaging gameplay mechanics with delightful animations and sound design.",
-    link: "https://appadvice.com/app/cutetitos-stickers/1436535267",
+    link: "https://apkpure.com/cutetitos-match-game/com.basicfun.cutetitos/download/1.0.0",
     tags: ["iOS", "Game Development", "Swift"],
     number: "03"
   }

@@ -4,9 +4,34 @@ import { useEffect, useRef, useState } from 'react'
 
 const experiences = [
   {
+    title: "Solutions Architect",
+    company: "Yoyo Code",
+    period: "May 2025 — Present",
+    location: "Remote — Syracuse, NY",
+    highlights: [
+      "Designed and deployed enterprise-scale AI automation pipelines using cutting-edge orchestration platforms (n8n, Claude Code, MCP, OpenAI Agents SDK) integrated with multi-modal AI services (KlingAI, Midjourney, Hugging Face)—reduced manual workflows by 80%",
+      "Enabled autonomous task execution across 15+ business domains; built production-ready agentic systems leveraging Mastra.js, LangChain, Agency Swarm, and CrewAI for complex multi-agent orchestration",
+      "Implemented RAG solutions on AWS Bedrock and Microsoft Autogen Framework for complex document processing and retrieval"
+    ]
+  },
+  {
+    title: "Senior Product Engineer (R+D)",
+    company: "Innovative Solutions",
+    period: "May 2024 — May 2025",
+    location: "Remote — Rochester, NY",
+    highlights: [
+      "Architected and shipped multi-tenant AI platform \"Tailwinds\" (Python + FastAPI, Next.js, AWS Amplify) with Auth0-based SSO, custom user-management microservice, and RAG-powered data-scraping workflow",
+      "Built full DevOps automation: reusable Terraform modules for ECS/Fargate clusters, ALB/NLB, Route 53, and ACM; CI/CD pipelines that promote Docker images from ECR to prod in <10 min with zero downtime",
+      "Led WatsonX, Amazon Q, and Langfuse integrations, exposing generative-AI chatflows as pluggable APIs; delivered POCs that unlocked two six-figure sales conversations",
+      "Designed container strategy for DarcyAI—converting monolith to micro-containers, eliminating EC2 dependency and optimizing resource usage",
+      "Implemented IBM App Connect enterprise flows linking Salesforce, bespoke ERP, and Tailwinds AI; reduced manual data-sync effort by 20 hrs/week with 99.9% SLA compliance",
+      "Orchestrated vulnerability-remediation program across eight repos (Renovatebot/Dependabot), closing high/critical CVEs within 24 hrs and passing SOC2/Vanta penetration audit"
+    ]
+  },
+  {
     title: "Senior Software Engineer",
     company: "uShip",
-    period: "Jan 2022 — Present",
+    period: "Jan 2022 — Jun 2024",
     location: "Remote — Austin, TX",
     highlights: [
       "Architected enterprise-scale GenAI solutions leveraging Document Loaders, Text Embeddings, RAG, vector stores, and LLM frameworks",
