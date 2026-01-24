@@ -24,7 +24,7 @@ export default function Hero() {
           }`}
         >
           <span className="font-mono text-xs uppercase tracking-[0.3em] opacity-60">
-            Senior Product Engineer (R+D)
+            Solutions Architect
           </span>
           <span className="w-16 h-px bg-[var(--color-ink)] opacity-30" />
         </div>

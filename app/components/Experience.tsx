@@ -4,9 +4,20 @@ import { useEffect, useRef, useState } from 'react'
 
 const experiences = [
   {
+    title: "Solutions Architect",
+    company: "Yoyo Code",
+    period: "May 2025 — Present",
+    location: "Remote — Syracuse, NY",
+    highlights: [
+      "Designed and deployed enterprise-scale AI automation pipelines using n8n, Claude Code, MCP, OpenAI Agents SDK integrated with multi-modal AI services (KlingAI, Midjourney, Hugging Face)—reduced manual workflows by 80%",
+      "Built production-ready agentic systems leveraging Mastra.js, LangChain, Agency Swarm, and CrewAI for complex multi-agent orchestration",
+      "Implemented RAG solutions on AWS Bedrock and Microsoft Autogen Framework for complex document processing and retrieval"
+    ]
+  },
+  {
     title: "Senior Product Engineer (R+D)",
     company: "Innovative Solutions",
-    period: "May 2025 — Present",
+    period: "May 2024 — May 2025",
     location: "Remote — Rochester, NY",
     highlights: [
       "Architected and shipped multi-tenant AI platform \"Tailwinds\" (Python + FastAPI, Next.js, AWS Amplify) with Auth0-based SSO, custom user-management microservice, and RAG-powered data-scraping workflow",
@@ -15,17 +26,6 @@ const experiences = [
       "Designed container strategy for DarcyAI—converting monolith to micro-containers, eliminating EC2 dependency",
       "Implemented IBM App Connect enterprise flows linking Salesforce, bespoke ERP, and Tailwinds AI; reduced manual data-sync effort by 20 hrs/week with 99.9% SLA compliance",
       "Orchestrated vulnerability-remediation program across eight repos, closing high/critical CVEs within 24 hrs and passing SOC2/Vanta penetration audit"
-    ]
-  },
-  {
-    title: "Solutions Architect",
-    company: "Yoyo Code",
-    period: "May 2024 — May 2025",
-    location: "Remote — Syracuse, NY",
-    highlights: [
-      "Designed and deployed enterprise-scale AI automation pipelines using n8n, Claude Code, MCP, OpenAI Agents SDK integrated with multi-modal AI services (KlingAI, Midjourney, Hugging Face)—reduced manual workflows by 80%",
-      "Built production-ready agentic systems leveraging Mastra.js, LangChain, Agency Swarm, and CrewAI for complex multi-agent orchestration",
-      "Implemented RAG solutions on AWS Bedrock and Microsoft Autogen Framework for complex document processing and retrieval"
     ]
   },
   {
