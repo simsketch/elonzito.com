@@ -25,6 +25,11 @@ export default function Footer() {
             ))}
           </nav>
 
+          {/* Phone */}
+          <a href="tel:+15615039444" className="font-mono text-xs opacity-50 hover:opacity-100 hover:text-[var(--color-rust)] transition-all">
+            561.503.9444
+          </a>
+
           {/* Copyright */}
           <div className="font-mono text-xs opacity-40">
             &copy; {currentYear} Elon Zito
