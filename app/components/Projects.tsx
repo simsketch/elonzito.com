@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react'
 
+const INITIAL_VISIBLE = 6
+
 const startups = [
   {
     title: "TouchGuides",
@@ -13,13 +15,85 @@ const startups = [
     number: "01"
   },
   {
+    title: "Avilon AI",
+    description: "AI-powered conversation rehearsal platform. Create digital twins from a photo and voice sample, then practice difficult conversations with realistic lip-synced video responses.",
+    link: "https://avilonai.com/",
+    tags: ["Next.js", "TypeScript", "AI/ML", "Founder"],
+    period: "2024 — Present",
+    number: "02"
+  },
+  {
+    title: "HealthCompass",
+    description: "AI personal health intelligence platform that analyzes uploaded medical documents — lab results, imaging, and genetic tests — and provides actionable insights with biomarker tracking.",
+    link: "https://eloiva.com/",
+    tags: ["Next.js", "TypeScript", "AI/ML", "Founder"],
+    period: "2024 — Present",
+    number: "03"
+  },
+  {
+    title: "CampsiteIQ",
+    description: "All-in-one campground management software with an AI reservation assistant, digital guidebooks, and a centralized operations dashboard for properties and analytics.",
+    link: "https://campsiteiq.com/",
+    tags: ["Astro", "TypeScript", "AI", "Founder"],
+    period: "2024 — Present",
+    number: "04"
+  },
+  {
+    title: "Reserve.Team",
+    description: "AI-powered restaurant reservation system with a voice assistant that answers calls, books tables, and manages modifications 24/7 without staff intervention.",
+    link: "https://reserve.team/",
+    tags: ["Next.js", "TypeScript", "AI", "Founder"],
+    period: "2024 — Present",
+    number: "05"
+  },
+  {
+    title: "TimeIQ",
+    description: "Smart scheduling platform that eliminates email-based meeting coordination. Shareable booking links with calendar sync, automatic timezone detection, and configurable buffer times.",
+    link: "https://timeiq.app/",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Founder"],
+    period: "2024 — Present",
+    number: "06"
+  },
+  {
+    title: "DocumentIQ",
+    description: "Browser-based document signing platform. Upload documents, send a signing link, and collect digital signatures — no downloads or paper required.",
+    link: "https://documentiq.app/",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Founder"],
+    period: "2024 — Present",
+    number: "07"
+  },
+  {
+    title: "KidCash",
+    description: "Digital allowance tracker that helps parents manage children's allowances and monitor savings goals with a fun, kid-friendly interface.",
+    link: "https://kidcash.online/",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Founder"],
+    period: "2024 — Present",
+    number: "08"
+  },
+  {
+    title: "DevToolbox",
+    description: "Native desktop app bundling 36+ developer utilities — JSON formatter, UUID generator, JWT decoder, regex tester, and more — with a visual pipeline builder for chaining tools into custom workflows.",
+    link: "https://devtoolbox.store/",
+    tags: ["Rust", "Tauri", "Desktop", "Founder"],
+    period: "2024 — Present",
+    number: "09"
+  },
+  {
+    title: "FreeUpSpace",
+    description: "macOS utility that detects and safely removes cached files, build artifacts, and dependencies from developer tools like Docker, Xcode, and Node.js to reclaim disk space.",
+    link: "https://freeupspace.app/",
+    tags: ["Swift", "macOS", "Native", "Founder"],
+    period: "2024 — Present",
+    number: "10"
+  },
+  {
     title: "Greenlight Dining",
     description: "On-demand dining mobile app and web portal enabling real-time restaurant discovery and reservations. Full-stack application with real-time updates.",
     link: "https://apkpure.com/greenlight-dining/com.a2zCreative.greenlight",
     tags: ["React Native", "ReactJS", "Node", "MongoDB", "Co-founder"],
     period: "2018 — 2019",
     location: "Lake Worth, FL",
-    number: "02"
+    number: "11"
   },
   {
     title: "Cutetitos Match Game",
@@ -27,7 +101,7 @@ const startups = [
     link: "https://apkpure.com/cutetitos-match-game/com.basicfun.cutetitos/download/1.0.0",
     tags: ["iOS", "Game Development", "Swift"],
     period: "2018",
-    number: "03"
+    number: "12"
   }
 ]
 
@@ -53,6 +127,9 @@ const mentorship = {
 export default function Projects() {
   const sectionRef = useRef<HTMLElement>(null)
   const [isVisible, setIsVisible] = useState(false)
+  const [showAll, setShowAll] = useState(false)
+
+  const visibleProjects = showAll ? startups : startups.slice(0, INITIAL_VISIBLE)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -97,7 +174,7 @@ export default function Projects() {
                 isVisible ? 'animate-reveal-up delay-100 opacity-100' : 'opacity-0'
               }`}
             >
-              Startups I&apos;ve founded, side projects, and community work.
+              Products I&apos;ve built — from AI-powered platforms to developer tools and native apps.
             </p>
           </div>
         </div>
@@ -111,7 +188,7 @@ export default function Projects() {
 
         {/* Projects grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {startups.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <a
               key={project.title}
               href={project.link}
@@ -173,6 +250,20 @@ export default function Projects() {
             </a>
           ))}
         </div>
+
+        {/* Show All / Show Less toggle */}
+        {startups.length > INITIAL_VISIBLE && (
+          <div className={`mt-12 text-center ${
+            isVisible ? 'animate-reveal-up delay-500 opacity-100' : 'opacity-0'
+          }`}>
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="font-mono text-sm uppercase tracking-widest link-underline cursor-pointer"
+            >
+              {showAll ? 'Show Less' : `Show All Projects (${startups.length})`}
+            </button>
+          </div>
+        )}
 
         {/* Pro Bono Section */}
         <div className={`mt-20 pt-16 border-t-2 border-[var(--color-ink)]/10 ${
