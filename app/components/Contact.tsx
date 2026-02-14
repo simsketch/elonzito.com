@@ -186,7 +186,6 @@ export default function Contact() {
 
       {/* Decorative elements */}
       <div className="absolute top-20 left-1/4 w-2 h-2 bg-[var(--color-rust)] rounded-full" />
-      <div className="absolute bottom-40 right-1/4 w-24 h-24 border border-[var(--color-ink)]/10 rounded-full" />
     </section>
   )
 }
