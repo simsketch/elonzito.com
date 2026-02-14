@@ -68,8 +68,8 @@ export default function Contact() {
       ref={sectionRef}
       className="py-32 relative overflow-hidden"
     >
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-[var(--color-ink)] -z-10" />
+      {/* Background decoration - right half on lg, full width behind contact info on mobile */}
+      <div className="hidden lg:block absolute top-0 right-0 w-1/2 h-full bg-[var(--color-ink)] -z-10" />
 
       <div className="container-editorial">
         <div className="grid lg:grid-cols-2 gap-16">
@@ -117,7 +117,7 @@ export default function Contact() {
           </div>
 
           {/* Right side - Contact info */}
-          <div className="lg:pl-16 text-[var(--color-bone)]">
+          <div className="bg-[var(--color-ink)] lg:bg-transparent -mx-8 px-8 py-12 lg:mx-0 lg:px-0 lg:py-0 lg:pl-16 text-[var(--color-bone)]">
             <div
               className={`space-y-12 ${
                 isVisible ? 'animate-reveal-up delay-400 opacity-100' : 'opacity-0'
