@@ -103,23 +103,33 @@ const startups = [
     number: "10"
   },
   {
-    title: "Greenlight Dining",
-    description: "On-demand dining mobile app and web portal enabling real-time restaurant discovery and reservations. Full-stack application with real-time updates.",
-    link: "https://apkpure.com/greenlight-dining/com.a2zCreative.greenlight",
-    github: "https://github.com/simsketch/greenlight",
-    tags: ["React Native", "ReactJS", "Node", "MongoDB", "Co-founder"],
-    period: "2018 — 2019",
-    location: "Lake Worth, FL",
+    title: "Brainstamp",
+    description: "Flashcard learning system that generates print-ready, duplex-aligned PDFs from text, image OCR, or Spanish verb conjugation tables. Study digitally with keyboard shortcuts or print perfectly aligned cards.",
+    link: "https://brainstamp.online/",
+    image: "/projects/brainstamp.png",
+    github: "https://github.com/simsketch/brainstamp",
+    tags: ["Next.js", "TypeScript", "Tesseract.js", "Founder"],
+    period: "2025 — Present",
     number: "11"
   },
   {
-    title: "Cutetitos Match Game",
-    description: "Mobile game that reached the Top 100 in the App Store Family Category. Engaging gameplay mechanics with delightful animations and sound design.",
-    link: "https://apkpure.com/cutetitos-match-game/com.basicfun.cutetitos/download/1.0.0",
-    github: "https://github.com/simsketch/cutetitos-match-game",
-    tags: ["iOS", "Game Development", "Swift"],
-    period: "2018",
+    title: "Build The Door",
+    description: "Curated startup ideas platform with validated business opportunities, pain score analysis, market research, MVP execution plans, and a Founder Fit Quiz to match entrepreneurs with the right ideas.",
+    link: "https://buildthedoor.com/",
+    image: "/projects/buildthedoor.png",
+    github: "https://github.com/simsketch/buildthedoor",
+    tags: ["Next.js", "TypeScript", "MongoDB", "AI", "Founder"],
+    period: "2025 — Present",
     number: "12"
+  },
+  {
+    title: "NeuroQuant",
+    description: "Multi-strategy AI trading arena where Claude-powered agents autonomously execute options and equity strategies. Real-time leaderboard tracks performance across iron condors, covered calls, momentum swings, and more.",
+    link: "#",
+    github: "https://github.com/simsketch/neuroquant",
+    tags: ["Python", "FastAPI", "Next.js", "AI", "Founder"],
+    period: "2025 — Present",
+    number: "13"
   }
 ]
 
