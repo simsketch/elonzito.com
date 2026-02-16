@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   description: 'Generative AI certified engineer specializing in LLMs, Agentic Frameworks, and full-stack development. Building intelligent systems that drive technological advancement.',
   keywords: ['Solutions Architect', 'Product Engineer', 'Generative AI', 'LLMs', 'RAG', 'Full Stack', 'React', 'Node.js', 'Python', 'AWS'],
   authors: [{ name: 'Elon Zito' }],
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/icon-dark-32x32.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: '/apple-icon.png',
+  },
   openGraph: {
     title: 'Elon Zito — Solutions Architect & Senior Product Engineer',
     description: 'Generative AI certified engineer specializing in LLMs, Agentic Frameworks, and full-stack development.',
