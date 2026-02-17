@@ -18,6 +18,21 @@ export const metadata: Metadata = {
     title: 'Elon Zito — Solutions Architect & Senior Product Engineer',
     description: 'Generative AI certified engineer specializing in LLMs, Agentic Frameworks, and full-stack development.',
     type: 'website',
+    url: 'https://www.elonzito.com',
+    images: [
+      {
+        url: 'https://www.elonzito.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Elon Zito — Solutions Architect & Senior Product Engineer',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Elon Zito — Solutions Architect & Senior Product Engineer',
+    description: 'Generative AI certified engineer specializing in LLMs, Agentic Frameworks, and full-stack development.',
+    images: ['https://www.elonzito.com/og-image.png'],
   },
 }
 
