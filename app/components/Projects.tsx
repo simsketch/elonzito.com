@@ -130,6 +130,74 @@ const startups = [
     tags: ["Python", "FastAPI", "Next.js", "AI", "Founder"],
     period: "2025 — Present",
     number: "13"
+  },
+  {
+    title: "FeedbackIQ",
+    description: "Drop a widget on your site, collect user feedback, and let an AI agent read your codebase and open a pull request — automatically turning suggestions into code changes.",
+    link: "https://feedbackiq.app/",
+    github: "https://github.com/simsketch/feedbackiq",
+    tags: ["Next.js", "TypeScript", "AI", "Founder"],
+    period: "2025 — Present",
+    number: "14"
+  },
+  {
+    title: "FrameIQ",
+    description: "Native macOS screen capture app with screenshots, recordings, annotations, and a full media library — built with a beautiful, modern interface for Apple Silicon and Intel.",
+    link: "https://frameiq.app/",
+    image: "/projects/frameiq.png",
+    github: "https://github.com/simsketch/frameiq",
+    tags: ["Swift", "macOS", "Native", "Founder"],
+    period: "2025 — Present",
+    number: "15"
+  },
+  {
+    title: "CloudMatch",
+    description: "Interactive learning tool for mastering AWS-to-GCP service mappings. Study 61+ equivalencies across 11 categories with flashcards, timed quizzes, and matching games.",
+    link: "#",
+    image: "/projects/cloudmatch.png",
+    github: "https://github.com/simsketch/cloudmatch",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Founder"],
+    period: "2025 — Present",
+    number: "16"
+  },
+  {
+    title: "TaxIQ",
+    description: "AI-powered tax strategy and wealth-building platform built on a 6-phase financial transformation framework with an AI copilot for personalized tax optimization.",
+    link: "https://taxiq.app/",
+    github: "https://github.com/simsketch/taxiq",
+    tags: ["Next.js", "TypeScript", "AI", "Founder"],
+    period: "2025 — Present",
+    number: "17"
+  },
+  {
+    title: "OddsIQ",
+    description: "Prediction market auto-trader that finds mispriced markets on Kalshi, builds your edge, and trades automatically. You set the rules — it executes.",
+    link: "https://oddsiq.app/",
+    image: "/projects/oddsiq.png",
+    github: "https://github.com/simsketch/oddsiq",
+    tags: ["Next.js", "TypeScript", "AI", "Founder"],
+    period: "2025 — Present",
+    number: "18"
+  },
+  {
+    title: "BoardIQ",
+    description: "Board meeting platform for creating stunning board books, tracking reader engagement in real-time, managing votes on resolutions, and collaborating with your entire board.",
+    link: "https://boardiq.app/",
+    image: "/projects/boardiq.png",
+    github: "https://github.com/simsketch/boardiq",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Founder"],
+    period: "2025 — Present",
+    number: "19"
+  },
+  {
+    title: "4hoy",
+    description: "Task management app that reveals Task Debt — a visual system showing the real cost of waiting. It treats aging tasks differently from fresh ones so you focus on what truly matters.",
+    link: "https://4hoy.com/",
+    image: "/projects/4hoy.png",
+    github: "https://github.com/simsketch/4hoy",
+    tags: ["React", "TypeScript", "Vite", "Founder"],
+    period: "2025 — Present",
+    number: "20"
   }
 ]
 
