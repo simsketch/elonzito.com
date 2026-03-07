@@ -134,7 +134,8 @@ const startups = [
   {
     title: "FeedbackIQ",
     description: "Drop a widget on your site, collect user feedback, and let an AI agent read your codebase and open a pull request — automatically turning suggestions into code changes.",
-    link: "https://feedbackiq.app/",
+    link: "https://www.feedbackiq.app/",
+    image: "/projects/feedbackiq.png",
     github: "https://github.com/simsketch/feedbackiq",
     tags: ["Next.js", "TypeScript", "AI", "Founder"],
     period: "2025 — Present",
