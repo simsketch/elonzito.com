@@ -3,9 +3,19 @@
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
-const INITIAL_VISIBLE = 6
+const INITIAL_VISIBLE = Infinity
 
 const startups = [
+  {
+    title: "KidCash",
+    description: "Digital allowance tracker that helps parents manage children's allowances and monitor savings goals with a fun, kid-friendly interface.",
+    link: "https://kidcash.online/",
+    image: "/projects/kidcash.png",
+    github: "https://github.com/simsketch/kidcash",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Founder"],
+    period: "2024 — Present",
+    number: "01"
+  },
   {
     title: "TimeIQ",
     description: "Smart scheduling platform that eliminates email-based meeting coordination. Shareable booking links with calendar sync, automatic timezone detection, and configurable buffer times.",
@@ -13,7 +23,7 @@ const startups = [
     image: "/projects/timeiq.png",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Founder"],
     period: "2024 — Present",
-    number: "01"
+    number: "02"
   },
   {
     title: "DocumentIQ",
@@ -22,7 +32,7 @@ const startups = [
     image: "/projects/documentiq.png",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Founder"],
     period: "2024 — Present",
-    number: "02"
+    number: "03"
   },
   {
     title: "DevToolbox",
@@ -32,7 +42,7 @@ const startups = [
     github: "https://github.com/simsketch/devtoolbox",
     tags: ["Rust", "Tauri", "Desktop", "Founder"],
     period: "2024 — Present",
-    number: "03"
+    number: "04"
   },
   {
     title: "FreeUpSpace",
@@ -42,7 +52,7 @@ const startups = [
     github: "https://github.com/simsketch/freeupspace",
     tags: ["Swift", "macOS", "Native", "Founder"],
     period: "2024 — Present",
-    number: "04"
+    number: "05"
   },
   {
     title: "TouchGuides",
@@ -52,7 +62,7 @@ const startups = [
     tags: ["React", "Node.js", "MongoDB", "Founder"],
     period: "Feb 2023 — Present",
     location: "Syracuse, NY",
-    number: "05"
+    number: "06"
   },
   {
     title: "Avilon AI",
@@ -62,7 +72,7 @@ const startups = [
     github: "https://github.com/simsketch/avilonai.com",
     tags: ["Next.js", "TypeScript", "AI/ML", "Founder"],
     period: "2024 — Present",
-    number: "06"
+    number: "07"
   },
   {
     title: "CampsiteIQ",
@@ -71,7 +81,7 @@ const startups = [
     image: "/projects/campsiteiq.png",
     tags: ["Astro", "TypeScript", "AI", "Founder"],
     period: "2024 — Present",
-    number: "07"
+    number: "08"
   },
   {
     title: "HealthCompass",
@@ -80,17 +90,36 @@ const startups = [
     image: "/projects/healthcompass.png",
     tags: ["Next.js", "TypeScript", "AI/ML", "Founder"],
     period: "2024 — Present",
-    number: "08"
+    number: "09"
   },
   {
-    title: "KidCash",
-    description: "Digital allowance tracker that helps parents manage children's allowances and monitor savings goals with a fun, kid-friendly interface.",
-    link: "https://kidcash.online/",
-    image: "/projects/kidcash.png",
-    github: "https://github.com/simsketch/kidcash",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Founder"],
-    period: "2024 — Present",
-    number: "09"
+    title: "MemoryIQ",
+    description: "AI-powered shared memory platform. Capture thoughts from anywhere, search by meaning, and share knowledge across all your AI tools — one brain for every AI.",
+    link: "https://memoryiq.app/",
+    image: "/projects/memoryiq.png",
+    github: "https://github.com/simsketch/memoryiq",
+    tags: ["Next.js", "TypeScript", "AI", "Founder"],
+    period: "2025 — Present",
+    number: "10"
+  },
+  {
+    title: "LawIQ",
+    description: "Employment rights tool that helps people who've been laid off understand what they're legally entitled to — severance, benefits, back pay — and generate a firm, professional demand letter to send directly to HR.",
+    link: "https://lawiq.app/",
+    image: "/projects/lawiq.png",
+    github: "https://github.com/simsketch/lawiq",
+    tags: ["Next.js", "TypeScript", "AI", "Founder"],
+    period: "2025 — Present",
+    number: "11"
+  },
+  {
+    title: "ScopeHero",
+    description: "AI-powered proposal generator for freelancers and small agencies. Turn a plain-language project description into a complete, branded, interactive HTML proposal — scope of work, investment breakdown, roadmap, and more.",
+    link: "https://scopehero.online/",
+    image: "/projects/scopehero.png",
+    tags: ["Next.js", "TypeScript", "AI", "Founder"],
+    period: "2025 — Present",
+    number: "12"
   },
   {
     title: "Reserve.Team",
@@ -100,7 +129,7 @@ const startups = [
     github: "https://github.com/simsketch/ai-reservation-bot",
     tags: ["Next.js", "TypeScript", "AI", "Founder"],
     period: "2024 — Present",
-    number: "10"
+    number: "13"
   },
   {
     title: "Brainstamp",
@@ -110,7 +139,7 @@ const startups = [
     github: "https://github.com/simsketch/brainstamp",
     tags: ["Next.js", "TypeScript", "Tesseract.js", "Founder"],
     period: "2025 — Present",
-    number: "11"
+    number: "14"
   },
   {
     title: "Build The Door",
@@ -120,16 +149,7 @@ const startups = [
     github: "https://github.com/simsketch/buildthedoor",
     tags: ["Next.js", "TypeScript", "MongoDB", "AI", "Founder"],
     period: "2025 — Present",
-    number: "12"
-  },
-  {
-    title: "NeuroQuant",
-    description: "Multi-strategy AI trading arena where Claude-powered agents autonomously execute options and equity strategies. Real-time leaderboard tracks performance across iron condors, covered calls, momentum swings, and more.",
-    link: "#",
-    github: "https://github.com/simsketch/neuroquant",
-    tags: ["Python", "FastAPI", "Next.js", "AI", "Founder"],
-    period: "2025 — Present",
-    number: "13"
+    number: "15"
   },
   {
     title: "FeedbackIQ",
@@ -139,7 +159,7 @@ const startups = [
     github: "https://github.com/simsketch/feedbackiq",
     tags: ["Next.js", "TypeScript", "AI", "Founder"],
     period: "2025 — Present",
-    number: "14"
+    number: "16"
   },
   {
     title: "FrameIQ",
@@ -149,7 +169,7 @@ const startups = [
     github: "https://github.com/simsketch/frameiq",
     tags: ["Swift", "macOS", "Native", "Founder"],
     period: "2025 — Present",
-    number: "15"
+    number: "17"
   },
   {
     title: "CloudMatch",
@@ -159,16 +179,7 @@ const startups = [
     github: "https://github.com/simsketch/cloudmatch",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Founder"],
     period: "2025 — Present",
-    number: "16"
-  },
-  {
-    title: "TaxIQ",
-    description: "AI-powered tax strategy and wealth-building platform built on a 6-phase financial transformation framework with an AI copilot for personalized tax optimization.",
-    link: "https://taxiq.app/",
-    github: "https://github.com/simsketch/taxiq",
-    tags: ["Next.js", "TypeScript", "AI", "Founder"],
-    period: "2025 — Present",
-    number: "17"
+    number: "18"
   },
   {
     title: "OddsIQ",
@@ -178,7 +189,7 @@ const startups = [
     github: "https://github.com/simsketch/oddsiq",
     tags: ["Next.js", "TypeScript", "AI", "Founder"],
     period: "2025 — Present",
-    number: "18"
+    number: "19"
   },
   {
     title: "BoardIQ",
@@ -188,7 +199,7 @@ const startups = [
     github: "https://github.com/simsketch/boardiq",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Founder"],
     period: "2025 — Present",
-    number: "19"
+    number: "20"
   },
   {
     title: "4hoy",
@@ -198,7 +209,7 @@ const startups = [
     github: "https://github.com/simsketch/4hoy",
     tags: ["React", "TypeScript", "Vite", "Founder"],
     period: "2025 — Present",
-    number: "20"
+    number: "21"
   }
 ]
 
