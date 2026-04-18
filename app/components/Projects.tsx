@@ -246,7 +246,7 @@ export default function Projects() {
           setIsVisible(true)
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0, rootMargin: '0px 0px -10% 0px' }
     )
 
     if (sectionRef.current) {
