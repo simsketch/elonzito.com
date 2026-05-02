@@ -34,6 +34,7 @@ export default function Header() {
     { label: 'Experience', href: '#experience' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Blog', href: 'https://medium.com/@simsketch', external: true },
     { label: 'Contact', href: '#contact' },
   ]
 
@@ -58,16 +59,27 @@ export default function Header() {
         <ul className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <li key={item.label}>
-              <Link
-                href={item.href}
-                className={`font-mono text-xs uppercase tracking-widest link-underline transition-colors ${
-                  activeSection === item.href.slice(1)
-                    ? 'text-[var(--color-rust)]'
-                    : 'hover:text-[var(--color-rust)]'
-                }`}
-              >
-                {item.label}
-              </Link>
+              {item.external ? (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-xs uppercase tracking-widest link-underline transition-colors hover:text-[var(--color-rust)]"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  href={item.href}
+                  className={`font-mono text-xs uppercase tracking-widest link-underline transition-colors ${
+                    activeSection === item.href.slice(1)
+                      ? 'text-[var(--color-rust)]'
+                      : 'hover:text-[var(--color-rust)]'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
