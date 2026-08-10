@@ -21,8 +21,18 @@ export type Provider = 'google-direct' | 'gateway'
 const GOOGLE_KEY = () => process.env.GOOGLE_GENERATIVE_AI_API_KEY
 const GATEWAY_KEY = () => process.env.AI_GATEWAY_API_KEY
 
-/** Model id as each provider names it. The Gateway prefixes with the vendor. */
-const CHAT_MODEL_GOOGLE = process.env.CHAT_MODEL_GOOGLE ?? 'gemini-2.5-flash-lite'
+/**
+ * Model id as each provider names it. The Gateway prefixes with the vendor.
+ *
+ * The direct default is the `-latest` alias rather than a pinned version:
+ * AI Studio retires specific versions for new keys ("gemini-2.5-flash-lite is
+ * no longer available to new users"), which would break this route on a
+ * schedule we do not control. The alias currently resolves to
+ * gemini-3.5-flash-lite. Pin a version here only if output stability ever
+ * matters more than staying callable.
+ */
+const CHAT_MODEL_GOOGLE =
+  process.env.CHAT_MODEL_GOOGLE ?? 'gemini-flash-lite-latest'
 const CHAT_MODEL_GATEWAY =
   process.env.CHAT_MODEL ?? 'google/gemini-2.5-flash-lite'
 
