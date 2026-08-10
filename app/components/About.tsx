@@ -52,9 +52,9 @@ export default function About() {
               }`}
             >
               <p className="font-serif text-2xl md:text-3xl lg:text-4xl leading-snug mb-8">
-                Generative AI certified principal engineer, specializing in leveraging{' '}
-                <span className="italic text-[var(--color-rust)]">LLMs, GenAI, Agentic Frameworks</span>{' '}
-                and NLP to create automated solutions that enhance productivity and reduce errors.
+                Machine learning and platform engineering leader who takes{' '}
+                <span className="italic text-[var(--color-rust)]">generative-AI systems</span>{' '}
+                from architecture to production in regulated enterprise environments.
               </p>
             </div>
 
@@ -64,16 +64,21 @@ export default function About() {
               }`}
             >
               <p className="font-mono text-sm leading-relaxed opacity-70 max-w-2xl">
-                Architect of end-to-end technology solutions across full-stack development,
-                leadership, QA automation, and Agile methodologies. Expertise spans e-commerce
-                platforms, mobile development, UX/UI design, and developer mentorship with a
-                focus on creating solutions that drive technological advancement.
+                Most recently led a distributed team delivering two AI platforms for a
+                Fortune 200 utility&apos;s treasury organization — a governed system of record
+                replacing spreadsheet tracking of multi-billion-dollar credit portfolios,
+                and a retrieval-augmented diligence engine built on hybrid search,
+                source-authority re-ranking, multi-agent consensus, and calibrated LLM
+                evaluation. Fifteen years spanning full-stack development, cloud architecture
+                (AWS, GCP, Terraform), UX design, and engineer mentorship, with a consistent
+                record of turning manual, error-prone workflows into measured and auditable
+                systems.
               </p>
             </div>
 
             {/* Education */}
             <div
-              className={`mt-12 pt-8 border-t border-[var(--color-ink)]/10 ${
+              className={`mt-12 pt-8 border-t border-ink/10 ${
                 isVisible ? 'animate-reveal-up delay-350 opacity-100' : 'opacity-0'
               }`}
             >
@@ -123,15 +128,15 @@ export default function About() {
 
             {/* Stats */}
             <div
-              className={`grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t-2 border-[var(--color-ink)]/10 ${
+              className={`grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t-2 border-ink/10 ${
                 isVisible ? 'animate-reveal-up delay-500 opacity-100' : 'opacity-0'
               }`}
             >
               {[
-                { value: '14+', label: 'Years Experience' },
-                { value: '13', label: 'Companies' },
+                { value: '15+', label: 'Years Experience' },
+                { value: '14', label: 'Companies' },
                 { value: '3', label: 'Startups Founded' },
-                { value: '5', label: 'Team Lead Roles' },
+                { value: '6', label: 'Team Lead Roles' },
               ].map((stat, index) => (
                 <div key={index}>
                   <div className="font-display text-4xl md:text-5xl text-[var(--color-rust)]">
@@ -148,7 +153,7 @@ export default function About() {
       </div>
 
       {/* Background decoration */}
-      <div className="absolute top-1/4 right-0 w-1/3 h-px bg-gradient-to-r from-transparent via-[var(--color-ink)]/10 to-transparent" />
+      <div className="absolute top-1/4 right-0 w-1/3 h-px bg-gradient-to-r from-transparent via-ink/10 to-transparent" />
     </section>
   )
 }

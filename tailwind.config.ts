@@ -13,6 +13,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Editorial palette. These mirror the --color-* custom properties in
+        // globals.css and must be kept in sync with them.
+        //
+        // They are declared here as literal hex rather than referenced as
+        // `var(--color-bone)` because Tailwind v3 cannot apply an opacity
+        // modifier to an arbitrary var(): `bg-[var(--color-bone)]/95` compiles
+        // to invalid CSS and silently renders transparent. Registering the
+        // colors makes `bg-bone/95` work. Use the named utilities whenever an
+        // opacity modifier is involved.
+        bone: '#F5F0E8',
+        ink: '#0D0D0D',
+        rust: '#C44536',
+        sage: '#5A7D5A',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

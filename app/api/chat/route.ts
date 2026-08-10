@@ -126,6 +126,22 @@ export async function POST(request: Request) {
           JSON.stringify(chunks.map((c) => c.heading))
         ),
       },
+      // Generation failures happen mid-stream, after headers are sent, so the
+      // try/catch below never sees them — without this hook the client gets a
+      // bare "An error occurred." The most likely failure by far is the
+      // Gateway's free-tier throttle, which deserves copy that says so.
+      onError: (error) => {
+        const message = error instanceof Error ? error.message : String(error)
+        console.error('[chat] stream error:', message)
+
+        if (/rate.?limit|quota|429/i.test(message)) {
+          return "The chat has hit its usage limit for now — it runs on a small budget. Email Elon at simsketch@gmail.com and he'll answer directly."
+        }
+        if (/budget|credit|payment/i.test(message)) {
+          return "Chat is out of budget for this period. Email Elon at simsketch@gmail.com in the meantime."
+        }
+        return 'Chat is taking a break right now. Try again shortly.'
+      },
     })
   } catch (error) {
     console.error('[chat] generation failed:', error)

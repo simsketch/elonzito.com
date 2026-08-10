@@ -326,7 +326,7 @@ export default function Projects() {
               <div className="p-8 flex flex-col flex-1">
                 {/* Project number + GitHub */}
                 <div className="flex items-center justify-between">
-                  <span className="font-display text-5xl text-[var(--color-ink)]/10 group-hover:text-[var(--color-rust)]/20 transition-colors">
+                  <span className="font-display text-5xl text-ink/10 group-hover:text-rust/20 transition-colors">
                     {project.number}
                   </span>
                   {project.github && (
@@ -418,7 +418,7 @@ export default function Projects() {
         )}
 
         {/* Pro Bono Section */}
-        <div className={`mt-20 pt-16 border-t-2 border-[var(--color-ink)]/10 ${
+        <div className={`mt-20 pt-16 border-t-2 border-ink/10 ${
           isVisible ? 'animate-reveal-up delay-500 opacity-100' : 'opacity-0'
         }`}>
           <h3 className="font-mono text-xs uppercase tracking-[0.3em] opacity-50 mb-8">
@@ -469,7 +469,7 @@ export default function Projects() {
 
         {/* GitHub CTA */}
         <div
-          className={`mt-16 pt-12 border-t-2 border-[var(--color-ink)]/10 text-center ${
+          className={`mt-16 pt-12 border-t-2 border-ink/10 text-center ${
             isVisible ? 'animate-reveal-up delay-600 opacity-100' : 'opacity-0'
           }`}
         >

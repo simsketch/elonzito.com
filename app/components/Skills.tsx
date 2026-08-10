@@ -113,7 +113,7 @@ export default function Skills() {
                 <h3 className="font-display text-xl tracking-wider">
                   {category.category}
                 </h3>
-                <div className="flex-1 h-px bg-[var(--color-ink)]/10" />
+                <div className="flex-1 h-px bg-ink/10" />
               </div>
 
               {/* Skills */}
@@ -136,7 +136,7 @@ export default function Skills() {
 
         {/* Featured technologies */}
         <div
-          className={`mt-24 pt-16 border-t-2 border-[var(--color-ink)]/10 ${
+          className={`mt-24 pt-16 border-t-2 border-ink/10 ${
             isVisible ? 'animate-reveal-up delay-500 opacity-100' : 'opacity-0'
           }`}
         >
@@ -164,7 +164,7 @@ export default function Skills() {
       </div>
 
       {/* Background decoration */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--color-ink)]/10 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-ink/10 to-transparent" />
     </section>
   )
 }

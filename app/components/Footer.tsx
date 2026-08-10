@@ -4,7 +4,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="py-12 bg-[var(--color-ink)] text-[var(--color-bone)] border-t border-[var(--color-bone)]/10">
+    <footer className="py-12 bg-[var(--color-ink)] text-[var(--color-bone)] border-t border-bone/10">
       <div className="container-editorial">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo */}
@@ -37,7 +37,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom tagline */}
-        <div className="mt-12 pt-8 border-t border-[var(--color-bone)]/5 text-center">
+        <div className="mt-12 pt-8 border-t border-bone/5 text-center">
           <p className="font-serif italic text-sm opacity-30">
             Designed with intention. Built with precision.
           </p>

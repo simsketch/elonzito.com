@@ -35,6 +35,7 @@ export default function Header() {
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
     { label: 'Blog', href: 'https://medium.com/@simsketch', external: true },
+    { label: 'Chat', href: '/chat' },
     { label: 'Contact', href: '#contact' },
   ]
 
@@ -42,11 +43,22 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-[var(--color-bone)]/95 backdrop-blur-sm border-b-2 border-[var(--color-ink)]'
-          : ''
+          ? 'bg-bone/95 backdrop-blur-sm border-b-2 border-[var(--color-ink)] text-[var(--color-ink)]'
+          : 'text-[var(--color-bone)]'
       }`}
     >
-      <nav className="container-editorial py-4 flex items-center justify-between">
+      {/* Scrim. Before the first scroll the header floats over the retro
+          computer, whose CRT is near-black — ink-on-black left the nav
+          invisible. Light text plus this gradient keeps it legible over the
+          3D scene and over the light static fallback alike. */}
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-black/60 via-black/25 to-transparent transition-opacity duration-500 ${
+          isScrolled ? 'opacity-0' : 'opacity-100'
+        }`}
+      />
+
+      <nav className="container-editorial relative z-10 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link
           href="#"

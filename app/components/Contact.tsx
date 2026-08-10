@@ -133,7 +133,7 @@ export default function Contact() {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 border border-[var(--color-bone)]/20 hover:border-[var(--color-rust)] hover:text-[var(--color-rust)] transition-colors"
+                      className="p-3 border border-bone/20 hover:border-[var(--color-rust)] hover:text-[var(--color-rust)] transition-colors"
                       aria-label={link.name}
                     >
                       {link.icon}
