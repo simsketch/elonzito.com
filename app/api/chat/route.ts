@@ -1,8 +1,8 @@
-import { createGateway } from '@ai-sdk/gateway'
-import { streamText, embed, convertToModelMessages, type UIMessage } from 'ai'
+import { streamText, convertToModelMessages, type UIMessage } from 'ai'
 
-import { retrieve, embeddingModel } from '@/lib/chat/retrieve'
+import { retrieve } from '@/lib/chat/retrieve'
 import { checkRateLimit } from '@/lib/chat/rateLimit'
+import { activeProvider, chatModel, embeddingFn } from '@/lib/chat/providers'
 import type { Chunk } from '@/lib/chat/types'
 
 /**
@@ -11,7 +11,7 @@ import type { Chunk } from '@/lib/chat/types'
  */
 export const runtime = 'nodejs'
 
-const CHAT_MODEL = process.env.CHAT_MODEL ?? 'google/gemini-2.5-flash-lite'
+// Model selection lives in lib/chat/providers.ts — it differs per provider.
 const MAX_QUESTION_CHARS = 500
 const MAX_HISTORY_TURNS = 6
 const MAX_OUTPUT_TOKENS = 500
@@ -47,9 +47,10 @@ const json = (body: unknown, status: number, headers?: HeadersInit) =>
   })
 
 export async function POST(request: Request) {
-  const apiKey = process.env.AI_GATEWAY_API_KEY
-  if (!apiKey) {
-    console.error('[chat] AI_GATEWAY_API_KEY is not configured')
+  if (!activeProvider()) {
+    console.error(
+      '[chat] no provider configured: set GOOGLE_GENERATIVE_AI_API_KEY or AI_GATEWAY_API_KEY'
+    )
     return json({ error: 'Chat is not configured right now.' }, 503)
   }
 
@@ -91,20 +92,8 @@ export async function POST(request: Request) {
     )
   }
 
-  const gateway = createGateway({ apiKey })
-
   // --- Guard 4: retrieve (degrades to lexical if embedding fails) ----------
-  const chunks = await retrieve(question, async (text) => {
-    const { embedding } = await embed({
-      model: gateway.textEmbeddingModel(embeddingModel),
-      value: text,
-    })
-    // The committed vectors are truncated to 768 dims and re-normalised; the
-    // query vector must be projected the same way or cosine compares nothing.
-    const head = embedding.slice(0, 768)
-    const norm = Math.hypot(...head) || 1
-    return head.map((v) => v / norm)
-  })
+  const chunks = await retrieve(question, embeddingFn())
 
   // --- Guard 5: history clamp + stream -------------------------------------
   const recent = messages.slice(-MAX_HISTORY_TURNS)
@@ -112,7 +101,7 @@ export async function POST(request: Request) {
 
   try {
     const result = streamText({
-      model: gateway(CHAT_MODEL),
+      model: chatModel(),
       system: `${SYSTEM_PROMPT}\n\nCONTEXT:\n\n${buildContext(chunks)}`,
       messages: modelMessages,
       maxOutputTokens: MAX_OUTPUT_TOKENS,

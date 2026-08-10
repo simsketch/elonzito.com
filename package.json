@@ -8,10 +8,12 @@
     "lint": "eslint .",
     "start": "next start",
     "test": "vitest run",
-    "build:embeddings": "node scripts/build-embeddings.mjs"
+    "build:embeddings": "node --experimental-strip-types scripts/build-embeddings.mjs",
+    "verify:embeddings": "node --experimental-strip-types scripts/verify-embedding-parity.mjs"
   },
   "dependencies": {
     "@ai-sdk/gateway": "^4.0.47",
+    "@ai-sdk/google": "^4.0.40",
     "@ai-sdk/react": "^4.0.62",
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "1.2.2",
