@@ -2,6 +2,8 @@ import './globals.css'
 import Script from 'next/script'
 import type { Metadata } from 'next'
 
+import ChatFab from './components/ChatFab'
+
 export const metadata: Metadata = {
   title: 'Elon Zito — Solutions Architect & Senior Product Engineer',
   description: 'Generative AI certified engineer specializing in LLMs, Agentic Frameworks, and full-stack development. Building intelligent systems that drive technological advancement.',
@@ -54,6 +56,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <ChatFab />
         <div className="noise-overlay" aria-hidden="true" />
       </body>
     </html>
