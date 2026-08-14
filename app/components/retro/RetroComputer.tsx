@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from 'react'
 
 /**
- * The interactive retro computer, ported from the standalone Vite/three.js
- * project (portfolio-retro, MIT © Edward Hinrichsen) into a React client
- * component.
+ * The interactive retro computer, ported from a standalone Vite/three.js
+ * project into a React client component. Upstream, the licence, and the full
+ * list of changes are in ./LICENSE.md.
  *
  * The scene owns a WebGL canvas and a full terminal emulator, so it needs real
  * DOM nodes rather than React state. It gets them via refs, boots once in an
