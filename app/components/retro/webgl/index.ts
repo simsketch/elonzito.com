@@ -19,6 +19,31 @@ function valMap(x: number, from: [number, number], to: [number, number]) {
   return y;
 }
 
+/** Camera framing constants, shared by the initial layout and the resize path. */
+const CAMERA_FOV = 50; // vertical, degrees
+const BASE_DISTANCE = 2.5; // camera z at scroll 0 on a wide viewport
+const COMPUTER_HALF_WIDTH = 1.5; // scene units from centre to the edge of the CRT
+
+/**
+ * Extra camera distance needed for the computer to fit the viewport's width.
+ *
+ * Three.js gives the camera a *vertical* FOV, so a narrow viewport crops the
+ * sides: on a phone the CRT ran past both edges and the screen text was cut
+ * off. The original project solved that by rotating the whole computer 90° at
+ * the top of the page and swinging it upright as you scrolled, which fits but
+ * leaves the headline text unreadable until the visitor scrolls.
+ *
+ * Deriving the distance from the horizontal FOV instead keeps the computer
+ * upright at every viewport, and needs no per-breakpoint tuning: it returns 0
+ * on wide screens, so desktop framing is untouched.
+ */
+function fitOffset(width: number, height: number) {
+  const tanHalfHorizontal =
+    Math.tan((CAMERA_FOV * Math.PI) / 360) * (width / height);
+  const needed = COMPUTER_HALF_WIDTH / tanHalfHorizontal;
+  return Math.max(0, needed - BASE_DISTANCE);
+}
+
 export type WebGLElements = TerminalElements & LoaderElements;
 
 /**
@@ -67,10 +92,9 @@ export default function WebGL(elements: WebGLElements) {
     const sizes = {
       width: document.documentElement.clientWidth,
       height: window.innerHeight,
-      portraitOffset: valMap(
-        window.innerHeight / document.documentElement.clientWidth,
-        [0.75, 1.75],
-        [0, 2]
+      portraitOffset: fitOffset(
+        document.documentElement.clientWidth,
+        window.innerHeight
       ),
     };
 
@@ -85,12 +109,12 @@ export default function WebGL(elements: WebGLElements) {
      */
     // Base camera
     const camera = new THREE.PerspectiveCamera(
-      50,
+      CAMERA_FOV,
       sizes.width / sizes.height,
       0.1,
       100
     );
-    camera.position.set(0, 0, -2.5);
+    camera.position.set(0, 0, -BASE_DISTANCE);
     // camera.position.set(0, -1, -5.5);
     camera.rotation.set(-Math.PI, 0, Math.PI);
     scene.add(camera);
@@ -182,11 +206,11 @@ export default function WebGL(elements: WebGLElements) {
         sizes.width = document.documentElement.clientWidth;
         sizes.height = window.innerHeight;
         updateCanvasSize(sizes.width, sizes.height);
-        sizes.portraitOffset = valMap(
-          sizes.height / sizes.width,
-          [0.8, 1.8],
-          [0, 2.5]
-        );
+        // Recomputed with the same function as the initial layout — the two
+        // used to disagree ([0.75,1.75]→[0,2] vs [0.8,1.8]→[0,2.5]), so the
+        // scene jumped the first time the window was resized or a mobile
+        // browser's address bar collapsed.
+        sizes.portraitOffset = fitOffset(sizes.width, sizes.height);
       },
       { passive: true, signal }
     );
@@ -248,7 +272,7 @@ export default function WebGL(elements: WebGLElements) {
       camera.position.z = valMap(
         scroll,
         [0, 1],
-        [-2.5 - sizes.portraitOffset, -10 - sizes.portraitOffset]
+        [-BASE_DISTANCE - sizes.portraitOffset, -10 - sizes.portraitOffset]
       );
 
       computerGroup.position.x = controlProps.computerHorizontal * zoomFac;
@@ -271,9 +295,7 @@ export default function WebGL(elements: WebGLElements) {
 
       canvas.style.opacity = `${valMap(scroll, [1.25, 1.75], [1, 0])}`;
 
-      if (sizes.portraitOffset > 0.5)
-        computerGroup.rotation.z = valMap(scroll, [0, 1], [-Math.PI / 2, 0]);
-      else computerGroup.rotation.z = 0;
+      computerGroup.rotation.z = 0;
 
       if (assists.crtMesh.morphTargetInfluences) {
         assists.crtMesh.morphTargetInfluences[0] = valMap(
