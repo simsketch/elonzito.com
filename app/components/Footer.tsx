@@ -18,7 +18,7 @@ export default function Footer() {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="font-mono text-xs uppercase tracking-widest opacity-50 hover:opacity-100 hover:text-[var(--color-rust)] transition-all"
+                className="font-mono text-xs uppercase tracking-widest text-ink-muted hover:text-[var(--color-rust)] transition-all"
               >
                 {item}
               </a>
@@ -26,19 +26,19 @@ export default function Footer() {
           </nav>
 
           {/* Phone */}
-          <a href="tel:+15615039444" className="font-mono text-xs opacity-50 hover:opacity-100 hover:text-[var(--color-rust)] transition-all">
+          <a href="tel:+15615039444" className="font-mono text-xs text-ink-muted hover:text-[var(--color-rust)] transition-all">
             561.503.9444
           </a>
 
           {/* Copyright */}
-          <div className="font-mono text-xs opacity-40">
+          <div className="font-mono text-xs text-ink-muted">
             &copy; {currentYear} Elon Zito
           </div>
         </div>
 
         {/* Bottom tagline */}
         <div className="mt-12 pt-8 border-t border-bone/5 text-center">
-          <p className="font-serif italic text-sm opacity-30">
+          <p className="font-serif italic text-sm text-ink-muted">
             Designed with intention. Built with precision.
           </p>
         </div>

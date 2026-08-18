@@ -250,7 +250,7 @@ export default function Experience() {
             >
               {/* Left column - Meta */}
               <div className="lg:col-span-4 flex flex-col gap-2">
-                <div className="font-mono text-xs uppercase tracking-wider opacity-50">
+                <div className="font-mono text-xs uppercase tracking-wider text-ink-muted">
                   {exp.period}
                 </div>
                 <h3 className="font-display text-2xl tracking-wide group-hover:text-[var(--color-rust)] transition-colors">
@@ -259,7 +259,7 @@ export default function Experience() {
                 <div className="font-serif italic text-lg opacity-80">
                   {exp.company}
                 </div>
-                <div className="font-mono text-xs opacity-40 mt-1">
+                <div className="font-mono text-xs text-ink-muted mt-1">
                   {exp.location}
                 </div>
               </div>

@@ -82,21 +82,21 @@ export default function About() {
                 isVisible ? 'animate-reveal-up delay-350 opacity-100' : 'opacity-0'
               }`}
             >
-              <h3 className="font-mono text-xs uppercase tracking-[0.3em] opacity-50 mb-4">
+              <h3 className="font-mono text-xs uppercase tracking-[0.3em] text-ink-muted mb-4">
                 Education & Certifications
               </h3>
               <div className="space-y-4">
                 <div>
                   <div className="font-display text-lg">Generative AI with Large Language Models</div>
-                  <div className="font-mono text-xs opacity-50">Coursera — May 2024</div>
+                  <div className="font-mono text-xs text-ink-muted">Coursera — May 2024</div>
                 </div>
                 <div>
                   <div className="font-display text-lg">AA Graphic Design</div>
-                  <div className="font-mono text-xs opacity-50">Palm Beach State College — GPA 3.65</div>
+                  <div className="font-mono text-xs text-ink-muted">Palm Beach State College — GPA 3.65</div>
                 </div>
                 <div>
                   <div className="font-display text-lg">College Credit Certificate in Information Technology</div>
-                  <div className="font-mono text-xs opacity-50">Palm Beach State College</div>
+                  <div className="font-mono text-xs text-ink-muted">Palm Beach State College</div>
                 </div>
               </div>
             </div>
@@ -107,21 +107,21 @@ export default function About() {
                 isVisible ? 'animate-reveal-up delay-400 opacity-100' : 'opacity-0'
               }`}
             >
-              <h3 className="font-mono text-xs uppercase tracking-[0.3em] opacity-50 mb-4">
+              <h3 className="font-mono text-xs uppercase tracking-[0.3em] text-ink-muted mb-4">
                 Languages
               </h3>
               <div className="flex flex-wrap gap-6">
                 <div>
                   <span className="font-display text-lg">English</span>
-                  <span className="font-mono text-xs opacity-50 ml-2">Native</span>
+                  <span className="font-mono text-xs text-ink-muted ml-2">Native</span>
                 </div>
                 <div>
                   <span className="font-display text-lg">Spanish</span>
-                  <span className="font-mono text-xs opacity-50 ml-2">Very Good</span>
+                  <span className="font-mono text-xs text-ink-muted ml-2">Very Good</span>
                 </div>
                 <div>
                   <span className="font-display text-lg">Portuguese</span>
-                  <span className="font-mono text-xs opacity-50 ml-2">Working Knowledge</span>
+                  <span className="font-mono text-xs text-ink-muted ml-2">Working Knowledge</span>
                 </div>
               </div>
             </div>

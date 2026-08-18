@@ -140,7 +140,7 @@ export default function Skills() {
             isVisible ? 'animate-reveal-up delay-500 opacity-100' : 'opacity-0'
           }`}
         >
-          <h3 className="font-mono text-xs uppercase tracking-[0.3em] opacity-50 mb-8">
+          <h3 className="font-mono text-xs uppercase tracking-[0.3em] text-ink-muted mb-8">
             Currently Focused On
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -154,7 +154,7 @@ export default function Skills() {
                 <div className="font-display text-2xl md:text-3xl group-hover:text-[var(--color-rust)] transition-colors">
                   {tech.name}
                 </div>
-                <div className="font-mono text-xs opacity-50 mt-2">
+                <div className="font-mono text-xs text-ink-muted mt-2">
                   {tech.desc}
                 </div>
               </div>

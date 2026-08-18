@@ -87,7 +87,7 @@ export default function Contact() {
             >
               {/* Email */}
               <div>
-                <h3 className="font-mono text-xs uppercase tracking-[0.3em] opacity-50 mb-4">
+                <h3 className="font-mono text-xs uppercase tracking-[0.3em] text-ink-muted mb-4">
                   Email
                 </h3>
                 <a
@@ -100,7 +100,7 @@ export default function Contact() {
 
               {/* Phone */}
               <div>
-                <h3 className="font-mono text-xs uppercase tracking-[0.3em] opacity-50 mb-4">
+                <h3 className="font-mono text-xs uppercase tracking-[0.3em] text-ink-muted mb-4">
                   Phone
                 </h3>
                 <a
@@ -113,7 +113,7 @@ export default function Contact() {
 
               {/* Location */}
               <div>
-                <h3 className="font-mono text-xs uppercase tracking-[0.3em] opacity-50 mb-4">
+                <h3 className="font-mono text-xs uppercase tracking-[0.3em] text-ink-muted mb-4">
                   Location
                 </h3>
                 <p className="font-display text-2xl md:text-3xl tracking-wide">
@@ -123,7 +123,7 @@ export default function Contact() {
 
               {/* Social links */}
               <div>
-                <h3 className="font-mono text-xs uppercase tracking-[0.3em] opacity-50 mb-4">
+                <h3 className="font-mono text-xs uppercase tracking-[0.3em] text-ink-muted mb-4">
                   Find Me
                 </h3>
                 <div className="flex flex-wrap gap-3">

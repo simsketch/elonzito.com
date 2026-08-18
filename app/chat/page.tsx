@@ -73,7 +73,7 @@ export default function ChatPage() {
         <div className="flex-1 space-y-8">
           {messages.length === 0 && (
             <div className="border-t border-ink/10 pt-8">
-              <p className="font-mono text-xs uppercase tracking-[0.3em] opacity-50">
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-ink-muted">
                 Try asking
               </p>
               <div className="mt-4 flex flex-wrap gap-3">
@@ -81,7 +81,7 @@ export default function ChatPage() {
                   <button
                     key={q}
                     onClick={() => submit(q)}
-                    className="border border-ink/30 px-4 py-3 text-left font-mono text-sm transition-colors hover:border-[var(--color-rust)] hover:text-[var(--color-rust)]"
+                    className="border border-ink/60 px-4 py-3 text-left font-mono text-sm transition-colors hover:border-[var(--color-rust)] hover:text-[var(--color-rust)]"
                   >
                     {q}
                   </button>
@@ -98,7 +98,7 @@ export default function ChatPage() {
                 className="grid gap-3 border-t border-ink/10 pt-6 lg:grid-cols-12"
               >
                 <div className="lg:col-span-3">
-                  <span className="font-mono text-xs uppercase tracking-[0.3em] opacity-50">
+                  <span className="font-mono text-xs uppercase tracking-[0.3em] text-ink-muted">
                     {isUser ? 'You' : 'Assistant'}
                   </span>
                 </div>
@@ -120,12 +120,12 @@ export default function ChatPage() {
           {busy && (
             <div className="grid gap-3 border-t border-ink/10 pt-6 lg:grid-cols-12">
               <div className="lg:col-span-3">
-                <span className="font-mono text-xs uppercase tracking-[0.3em] opacity-50">
+                <span className="font-mono text-xs uppercase tracking-[0.3em] text-ink-muted">
                   Assistant
                 </span>
               </div>
               <div className="lg:col-span-9">
-                <span className="inline-flex gap-1 font-mono text-sm opacity-50">
+                <span className="inline-flex gap-1 font-mono text-sm text-ink-muted">
                   <span className="animate-pulse">Retrieving</span>
                   <span className="animate-pulse">…</span>
                 </span>
@@ -160,7 +160,7 @@ export default function ChatPage() {
               maxLength={500}
               placeholder="Ask about his experience, projects, or how he works…"
               aria-label="Ask a question about Elon"
-              className="flex-1 border border-ink/30 bg-transparent px-4 py-3 font-mono text-sm outline-none transition-colors placeholder:opacity-40 focus:border-[var(--color-rust)]"
+              className="flex-1 border border-ink/60 bg-transparent px-4 py-3 font-mono text-sm outline-none transition-colors placeholder:text-ink-muted focus:border-[var(--color-rust)]"
             />
             <button
               type="submit"
@@ -170,7 +170,7 @@ export default function ChatPage() {
               {busy ? 'Thinking' : 'Ask'}
             </button>
           </div>
-          <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] opacity-40">
+          <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
             Grounded in a curated corpus · answers may be imperfect · reach Elon
             directly at simsketch@gmail.com
           </p>

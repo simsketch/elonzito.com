@@ -24,6 +24,7 @@ const config: Config = {
         // opacity modifier is involved.
         bone: '#F5F0E8',
         ink: '#0D0D0D',
+        'ink-muted': '#6A6865',
         rust: '#C44536',
         sage: '#5A7D5A',
         background: 'hsl(var(--background))',

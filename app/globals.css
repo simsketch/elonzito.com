@@ -7,6 +7,10 @@
 :root {
   --color-bone: #F5F0E8;
   --color-ink: #0D0D0D;
+  /* Secondary text. Replaces opacity-40/50 on ink, which computed to 2.6:1 and
+     3.6:1 against bone — both under the 4.5:1 WCAG AA needs for body text.
+     This sits at 4.90:1 while reading as the same muted grey. */
+  --color-ink-muted: #6A6865;
   --color-rust: #C44536;
   --color-sage: #5A7D5A;
   --color-slate: #3D4F5F;
@@ -291,7 +295,7 @@ body {
   font-family: var(--font-display);
   font-size: 0.875rem;
   letter-spacing: 0.1em;
-  opacity: 0.5;
+  color: var(--color-ink-muted);
 }
 
 /* Card brutalist style */

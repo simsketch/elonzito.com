@@ -289,7 +289,7 @@ export default function Projects() {
         </div>
 
         {/* Startups header */}
-        <h3 className={`font-mono text-xs uppercase tracking-[0.3em] opacity-50 mb-8 ${
+        <h3 className={`font-mono text-xs uppercase tracking-[0.3em] text-ink-muted mb-8 ${
           isVisible ? 'animate-reveal-up delay-150 opacity-100' : 'opacity-0'
         }`}>
           Startups & Products
@@ -334,7 +334,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 opacity-30 hover:opacity-100 hover:text-[var(--color-rust)] transition-all"
+                      className="p-2 text-ink-muted hover:text-[var(--color-rust)] transition-all"
                       aria-label={`${project.title} on GitHub`}
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -356,7 +356,7 @@ export default function Projects() {
                 </a>
 
                 {/* Period */}
-                <div className="font-mono text-xs opacity-40 mt-1">
+                <div className="font-mono text-xs text-ink-muted mt-1">
                   {project.period} {project.location && `• ${project.location}`}
                 </div>
 
@@ -373,7 +373,7 @@ export default function Projects() {
                       className={`font-mono text-[10px] uppercase tracking-wider ${
                         tag === 'Founder' || tag === 'Co-founder'
                           ? 'text-[var(--color-rust)]'
-                          : 'opacity-40'
+                          : 'text-ink-muted'
                       }`}
                     >
                       {tag}
@@ -421,7 +421,7 @@ export default function Projects() {
         <div className={`mt-20 pt-16 border-t-2 border-ink/10 ${
           isVisible ? 'animate-reveal-up delay-500 opacity-100' : 'opacity-0'
         }`}>
-          <h3 className="font-mono text-xs uppercase tracking-[0.3em] opacity-50 mb-8">
+          <h3 className="font-mono text-xs uppercase tracking-[0.3em] text-ink-muted mb-8">
             Pro Bono & Community
           </h3>
 
@@ -436,7 +436,7 @@ export default function Projects() {
               <h4 className="font-display text-xl tracking-wide group-hover:text-[var(--color-rust)] transition-colors">
                 {proBono[0].title}
               </h4>
-              <div className="font-mono text-xs opacity-40 mt-1">
+              <div className="font-mono text-xs text-ink-muted mt-1">
                 {proBono[0].period} • {proBono[0].location}
               </div>
               <p className="font-mono text-sm leading-relaxed opacity-60 mt-4">
@@ -444,7 +444,7 @@ export default function Projects() {
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
                 {proBono[0].tags.map((tag) => (
-                  <span key={tag} className="font-mono text-[10px] uppercase tracking-wider opacity-40">
+                  <span key={tag} className="font-mono text-[10px] uppercase tracking-wider text-ink-muted">
                     {tag}
                   </span>
                 ))}
@@ -457,7 +457,7 @@ export default function Projects() {
                 {mentorship.title}
               </h4>
               <div className="font-serif italic opacity-70">{mentorship.organization}</div>
-              <div className="font-mono text-xs opacity-40 mt-1">
+              <div className="font-mono text-xs text-ink-muted mt-1">
                 {mentorship.period} • {mentorship.location}
               </div>
               <p className="font-mono text-sm leading-relaxed opacity-60 mt-4">
