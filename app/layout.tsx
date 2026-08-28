@@ -20,7 +20,7 @@ const personSchema = {
   url: SITE_URL,
   email: 'mailto:simsketch@gmail.com',
   image: `${SITE_URL}/og-image.png`,
-  jobTitle: 'Lead ML Engineer & Solutions Architect',
+  jobTitle: 'Lead AI Solutions Architect',
   description:
     'Machine learning and platform engineering leader who takes generative-AI systems from architecture to production in regulated enterprise environments.',
   knowsAbout: [

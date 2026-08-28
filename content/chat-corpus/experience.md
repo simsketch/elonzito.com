@@ -8,15 +8,15 @@ Elon Zito was Solutions Architect at Yoyo Code during May 2025 — Present, work
 - Built production-ready agentic systems leveraging Mastra.js, LangChain, Agency Swarm, and CrewAI for complex multi-agent orchestration
 - Implemented RAG solutions on AWS Bedrock and Microsoft Autogen Framework for complex document processing and retrieval
 
-## Lead ML Engineer at Peak Activity
+## Lead AI Solutions Architect at Peak Activity
 
-Elon Zito was Lead ML Engineer at Peak Activity during Jul 2025 — Aug 2026, working remotely from Delray Beach, FL.
+Elon Zito was Lead AI Solutions Architect at Peak Activity during Jul 2025 — Aug 2026, working remotely from Delray Beach, FL.
 
 - Led engineering for NextEra Energy Treasury's platform modernization—two AI platforms from architecture to production, directing ~10 engineers across Peak Activity, NextEra, and contract teams
 - Replaced Excel-based tracking of billions in project finance, revolvers, term loans, and letters of credit with a governed system of record (Next.js 15, Django/DRF, PostgreSQL on AWS ECS Fargate, Terraform, Entra ID SSO)
 - Built an LLM analyst over the live portfolio—streaming Claude on AWS Bedrock with permission-scoped tools and inline charts—plus automated market intelligence synthesizing daily bank research emails into reports feeding rate and spread assumptions
 - Architected a RAG diligence engine collapsing M&A due diligence from days to minutes: Pixtral multimodal parsing, Gecko/pgvector hybrid search fused by Reciprocal Rank Fusion, source-authority re-ranking, and amendment-chain reconciliation across ~3,000 documents per deal room
-- Designed multi-agent consensus with LLM-as-judge adjudication and isotonic-regression-calibrated confidence, plus a fail-closed prompt promotion gate measured by Cohen's kappa against human-labelled ground truth
+- Designed multi-agent consensus with LLM-as-judge adjudication and calibrated confidence scoring, plus a fail-closed prompt promotion gate validated against human-labelled ground truth
 - Built the AI-assisted engineering practice both programs run on—a Claude-on-Bedrock code reviewer gating every merge and agent workflows for ticket-to-PR delivery
 
 ## Senior Product Engineer (R+D) at Innovative Solutions
