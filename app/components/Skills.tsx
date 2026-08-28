@@ -7,6 +7,8 @@ const skillCategories = [
     category: "Expert",
     color: "var(--color-rust)",
     skills: [
+      "Generative AI", "LLMs", "RAG", "Vector DBs", "Agentic AI",
+      "Python", "Django", "FastAPI",
       "JavaScript", "TypeScript", "Node.js", "React", "Vue", "Svelte", "Next.js", "MongoDB",
       "React Native", "Expo", "iOS",
       ".NET", "C#", "MSSQL", ".NET Core",
@@ -22,7 +24,6 @@ const skillCategories = [
     category: "Experienced",
     color: "var(--color-sage)",
     skills: [
-      "Python", "Generative AI", "LLMs", "RAG", "Vector DBs",
       "AngularJS", "Angular", "GraphQL", "Ionic Framework"
     ]
   },
@@ -30,7 +31,7 @@ const skillCategories = [
     category: "Skillful",
     color: "var(--color-slate)",
     skills: [
-      "Python", "Django", "Flask", "FastAPI", "Elixir", "PyTorch"
+      "Flask", "Elixir", "PyTorch"
     ]
   },
   {

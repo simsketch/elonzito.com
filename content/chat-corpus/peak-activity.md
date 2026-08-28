@@ -1,8 +1,8 @@
-# Peak Activity — Lead ML Engineer
+# Peak Activity — Lead AI Solutions Architect
 
 ## Role and scope at Peak Activity
 
-From July 2025 to August 2026, Elon Zito was Lead ML Engineer at Peak Activity, working remotely from Delray Beach, Florida.
+From July 2025 to August 2026, Elon Zito was Lead AI Solutions Architect at Peak Activity, working remotely from Delray Beach, Florida.
 
 He led engineering for a Fortune 200 energy utility's treasury platform modernization, taking two AI systems from architecture to production and directing a distributed team of around ten engineers across Peak Activity, the client, and contract staff. He owned the architecture, sprint scope, code review, and compliance sign-off, and delivered into client-governed AWS and GCP environments through dual GitHub Actions and GitLab CI pipelines.
 
@@ -52,11 +52,11 @@ Rather than a debate round, the system generates several candidate answers indep
 
 An LLM judge scores each candidate against a shared rubric, and a deterministic fact-normalization layer aligns claims by the evidence they cite rather than by string similarity, so genuine disagreement is distinguished from rephrasing. When the top two candidates are close in score but differ in content, the answer is annotated and every candidate is surfaced for a human to adjudicate against the cited documents.
 
-Confidence is calibrated, not decorated. Raw inter-agent agreement is mapped through a monotonic curve fit by isotonic regression with Laplace smoothing against a human-labelled gold set, so a published confidence number predicts a low-edit answer rather than merely restating that the candidates agreed.
+Confidence is calibrated, not decorated. Raw inter-agent agreement is calibrated against a human-labelled gold set, so a published confidence number predicts a low-edit answer rather than merely restating that the candidates agreed.
 
 ## Evaluation and governance
 
-Elon built the evaluation program that gates releases. The LLM judge is scored against human labels using Cohen's kappa on the categorical grade as the headline metric, since exact-match agreement overstates a judge by ignoring chance, alongside Kendall's tau-b on the ordinal score and a signed bias measurement to quantify self-preference per deployed model. Version labels shown to the judge are neutral, which removes the self-recognition trigger that drives self-preference.
+Elon built the evaluation program that gates releases. The LLM judge is scored against human labels using chance-corrected agreement on the categorical grade as the headline metric, alongside Kendall's tau-b on the ordinal score and a signed bias measurement to quantify self-preference per deployed model. Version labels shown to the judge are neutral, which removes the self-recognition trigger that drives self-preference.
 
 A self-improvement loop diagnoses what reviewers correct, per rubric dimension, and proposes revised prompts — but only as preview versions. It never promotes. Promotion runs through a fail-closed two-tier gate: deterministic fact and source checks against held-out deals decide pass or fail, while an advisory judge only annotates the report. No prompt reaches production on a model's own say-so.
 

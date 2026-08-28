@@ -15,7 +15,7 @@ const experiences = [
     ]
   },
   {
-    title: "Lead ML Engineer",
+    title: "Lead AI Solutions Architect",
     company: "Peak Activity",
     period: "Jul 2025 — Aug 2026",
     location: "Remote — Delray Beach, FL",
@@ -24,7 +24,7 @@ const experiences = [
       "Replaced Excel-based tracking of billions in project finance, revolvers, term loans, and letters of credit with a governed system of record (Next.js 15, Django/DRF, PostgreSQL on AWS ECS Fargate, Terraform, Entra ID SSO)",
       "Built an LLM analyst over the live portfolio—streaming Claude on AWS Bedrock with permission-scoped tools and inline charts—plus automated market intelligence synthesizing daily bank research emails into reports feeding rate and spread assumptions",
       "Architected a RAG diligence engine collapsing M&A due diligence from days to minutes: Pixtral multimodal parsing, Gecko/pgvector hybrid search fused by Reciprocal Rank Fusion, source-authority re-ranking, and amendment-chain reconciliation across ~3,000 documents per deal room",
-      "Designed multi-agent consensus with LLM-as-judge adjudication and isotonic-regression-calibrated confidence, plus a fail-closed prompt promotion gate measured by Cohen's kappa against human-labelled ground truth",
+      "Designed multi-agent consensus with LLM-as-judge adjudication and calibrated confidence scoring, plus a fail-closed prompt promotion gate validated against human-labelled ground truth",
       "Built the AI-assisted engineering practice both programs run on—a Claude-on-Bedrock code reviewer gating every merge and agent workflows for ticket-to-PR delivery"
     ]
   },

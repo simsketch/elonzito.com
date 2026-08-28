@@ -95,7 +95,7 @@ export default function RetroComputer() {
       {/* Real heading for SEO and screen readers — the visual title is drawn
           inside the WebGL screen, which no crawler or reader can see. */}
       <h1 className="sr-only">
-        Elon Zito — Lead ML Engineer, Solutions Architect and Generative AI
+        Elon Zito — Lead AI Solutions Architect and Generative AI
         Specialist
       </h1>
 
@@ -141,7 +141,7 @@ export default function RetroComputer() {
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-6 px-6 text-center">
           <div>
             <div className="font-mono text-xs uppercase tracking-[0.3em] opacity-60">
-              Lead ML Engineer
+              Lead AI Solutions Architect
             </div>
             <div className="heading-massive mt-2">Elon</div>
             <div className="heading-massive">

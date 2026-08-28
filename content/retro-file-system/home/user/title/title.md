@@ -5,7 +5,7 @@
 
 #  *I'm Elon*
 
-##   • Lead ML Engineer
+##   • Lead AI Solutions Architect
 ##   • LLM & RAG Systems
 ##   • Full-Stack Architect
 ##   • UX/UI Designer
